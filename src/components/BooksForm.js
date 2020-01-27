@@ -23,7 +23,7 @@ class BooksForm extends React.Component {
     });
   }
 
-  handleTitleChange() {
+  handleTitleChange(event) {
     this.setState({
       title: event.target.value,
     });
@@ -66,7 +66,7 @@ class BooksForm extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createBook = (book) => dispatch(createBook(book))
+    createBook: (book) => dispatch(createBook(book))
   };
 };
 

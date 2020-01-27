@@ -1,14 +1,13 @@
 import React from 'react';
+import BooksList from './components/BooksList';
+import BooksForm from './components/BooksForm';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Bookstore APP.
-        </p>
-      </header>
+      <BooksList />
+      <BooksForm />
     </div>
   );
 }

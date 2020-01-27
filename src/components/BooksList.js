@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Book from './Book';
 import { removeBook } from '../actions';
 
@@ -6,17 +7,17 @@ class BooksList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleDelete = this.handleDelete.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
     this.renderBooks = this.renderBooks.bind(this);
   }
 
-  handleDelete(book) {
+  handleRemove(book) {
     this.props.removeBook(book);
   }
 
   renderBooks() {
     const { bookList } = this.props;
-    return bookList.map(b => <tr><td></td><td>{b.title}</td><td>{b.category}</td><td><button onClick={this.handleDelete(b)}>Remove</button></td></tr>)
+    return bookList.map(b => <Book book={b} onRemove={this.handleRemove(b)} />)
   };
 
   render() {
@@ -38,7 +39,7 @@ const mapStateToProps = (state) => ({ bookList: state });
 
 const mapDispatchToProps = dispatch => {
   return {
-    removeBook = (book) => dispatch(removeBook(book)),
+    removeBook: (book) => dispatch(removeBook(book)),
   };
 };
 
