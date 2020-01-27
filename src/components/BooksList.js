@@ -11,13 +11,11 @@ class BooksList extends React.Component {
     this.renderBooks = this.renderBooks.bind(this);
   }
 
-  handleRemove(book) {
-    this.props.removeBook(book);
-  }
+  handleRemove = (book) => this.props.removeBook(book);
 
   renderBooks() {
     const { bookList } = this.props;
-    return bookList.map(b => <Book book={b} onRemove={this.handleRemove(b)} />)
+    return bookList.map(b => <Book key={`${b.title}-${b.id}`} book={b} onRemove={() => this.handleRemove(b)} />)
   };
 
   render() {
@@ -35,11 +33,11 @@ class BooksList extends React.Component {
   }
 };
 
-const mapStateToProps = (state) => ({ bookList: state });
+const mapStateToProps = state => ({ bookList: state.bookReducer.books, });
 
 const mapDispatchToProps = dispatch => {
   return {
-    removeBook: (book) => dispatch(removeBook(book)),
+    removeBook: book => dispatch(removeBook(book)),
   };
 };
 
