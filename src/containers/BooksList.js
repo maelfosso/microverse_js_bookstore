@@ -30,7 +30,13 @@ const BooksList = props => {
 };
 
 BooksList.propTypes = {
-  bookList: PropTypes.arrayOf({}).isRequired,
+  bookList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   removeBook: PropTypes.func.isRequired,
 };
 
