@@ -1,44 +1,43 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Book from './Book';
 import { removeBook } from '../actions';
 
-class BooksList extends React.Component {
-  constructor(props) {
-    super(props);
+const BooksList = props => {
+  const { bookList, removeBook } = props;
 
-    this.handleRemove = this.handleRemove.bind(this);
-    this.renderBooks = this.renderBooks.bind(this);
-  }
+  const handleRemove = book => removeBook(book);
 
-  handleRemove = (book) => this.props.removeBook(book);
+  const renderBooks = () => bookList.map(b => <Book key={`${b.title}-${b.id}`} book={b} onRemove={() => handleRemove(b)} />);
 
-  renderBooks() {
-    const { bookList } = this.props;
-    return bookList.map(b => <Book key={`${b.title}-${b.id}`} book={b} onRemove={() => this.handleRemove(b)} />)
-  };
-
-  render() {
-    return (
-      <div>
-        <p>List of books</p>
-        <table>
-          <thead>
-            <tr><td>&nbsp;</td><td>Title</td><td>Category</td><td></td></tr>
-          </thead>
-          <tbody>{this.renderBooks()}</tbody>
-        </table>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <p>List of books</p>
+      <table>
+        <thead>
+          <tr>
+            <td>&nbsp;</td>
+            <td>Title</td>
+            <td>Category</td>
+            <td>Remove?</td>
+          </tr>
+        </thead>
+        <tbody>{renderBooks()}</tbody>
+      </table>
+    </div>
+  );
 };
 
-const mapStateToProps = state => ({ bookList: state.bookReducer.books, });
-
-const mapDispatchToProps = dispatch => {
-  return {
-    removeBook: book => dispatch(removeBook(book)),
-  };
+BooksList.propTypes = {
+  bookList: PropTypes.arrayOf({}).isRequired,
+  removeBook: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = state => ({ bookList: state.bookReducer.books });
+
+const mapDispatchToProps = dispatch => ({
+  removeBook: book => dispatch(removeBook(book)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
