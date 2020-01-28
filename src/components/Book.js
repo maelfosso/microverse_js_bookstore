@@ -5,7 +5,7 @@ const Book = props => {
   const { book, onRemove } = props;
   return (
     <tr>
-      <td />
+      <td>{book.id}</td>
       <td>{book.title}</td>
       <td>{book.category}</td>
       <td><button type="button" onClick={onRemove}>Remove</button></td>

@@ -11,10 +11,6 @@ class BooksForm extends React.Component {
       title: '',
       category: CATEGORIES[0],
     };
-
-    this.handleCategoryChange = this.handleCategoryChange.bind(this);
-    this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleCategoryChange(event) {
