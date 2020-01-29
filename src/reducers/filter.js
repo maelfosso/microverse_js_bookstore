@@ -3,19 +3,17 @@ import { CHANGE_FILTER } from '../actions';
 const initialState = { filter: 'All' };
 
 const filterReducter = (state = initialState, action) => {
-
+  const { filter } = state;
   switch (action.type) {
     case CHANGE_FILTER:
-      const { filter } = state;
-      
       if (filter !== action.category) {
         return { filter: action.category };
       }
-      break;
+      return state;
 
     default:
       return state;
   }
-}
+};
 
 export default filterReducter;

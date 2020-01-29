@@ -5,55 +5,38 @@ import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
 
-class BooksList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filter: 'All',
-    };
-    
-    this.handleRemove = this.handleRemove.bind(this);
-    this.handleFilterChange = this.handleFilterChange.bind(this);
-  }
+const BooksList = (props) => {
+  let { bookList, filter, removeBook, changeFilter } = props;
 
-  handleRemove(book) {
-    const { removeBook } = this.props;
-    removeBook(book);
-  };
+  const handleRemove = book => removeBook(book);
 
-  renderBooks() {
-    let { bookList, filter } = this.props;
+  const renderBooks = () => {
     if (filter !== 'All') {
       bookList = bookList.filter(b => b.category === filter);
     }
     
-    return bookList.map(b => <Book key={`${b.title}-${b.id}`} book={b} onRemove={() => this.handleRemove(b)} />);
+    return bookList.map(b => <Book key={`${b.title}-${b.id}`} book={b} onRemove={() => handleRemove(b)} />);
   }
 
-  handleFilterChange(filter) {
-    const { changeFilter } = this.props;
-    changeFilter(filter);
-  }
+  const handleFilterChange = (filter) => changeFilter(filter);
 
-  render() {
-    return (
-      <div>
-        <CategoryFilter onFilterChange={this.handleFilterChange} />
-        <p>List of books</p>
-        <table>
-          <thead>
-            <tr>
-              <td>&nbsp;</td>
-              <td>Title</td>
-              <td>Category</td>
-              <td>Remove?</td>
-            </tr>
-          </thead>
-          <tbody>{this.renderBooks()}</tbody>
-        </table>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <CategoryFilter onFilterChange={handleFilterChange} />
+      <p>List of books</p>
+      <table>
+        <thead>
+          <tr>
+            <td>&nbsp;</td>
+            <td>Title</td>
+            <td>Category</td>
+            <td>Remove?</td>
+          </tr>
+        </thead>
+        <tbody>{renderBooks()}</tbody>
+      </table>
+    </div>
+  );
   
 };
 
