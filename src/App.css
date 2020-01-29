@@ -1,14 +1,72 @@
+html, body, #root {
+  height: 100%;
+}
+
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  width: 50%;
-  margin: auto;
+  padding: 25px 100px 0;
+  background: #f5f6fa;
+  height: 100%;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.content {
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 29px 100px;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.nav .title {
+  font-size: 30px;
+  font-family: monospace;
+  color: #0290ff;
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav ul li {
+  margin: 0 20px;
+  letter-spacing: 1.9px;
+  font-size: 13px;
+  font-family: monospace;
+  color: #121212;
+  opacity: 50%;
+  text-transform: uppercase;
+}
+
+.nav ul li.active {
+  opacity: 100%;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.avatar {
+  color: #0290ff;
+  border: 1px solid #e8e8e8;
+  border-radius: 45px;
+  padding: 14px;
 }
