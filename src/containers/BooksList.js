@@ -5,8 +5,9 @@ import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = (props) => {
-  let { bookList, filter, removeBook, changeFilter } = props;
+const BooksList = props => {
+  const { filter, removeBook, changeFilter } = props;
+  let { bookList } = props;
 
   const handleRemove = book => removeBook(book);
 
@@ -14,11 +15,11 @@ const BooksList = (props) => {
     if (filter !== 'All') {
       bookList = bookList.filter(b => b.category === filter);
     }
-    
-    return bookList.map(b => <Book key={`${b.title}-${b.id}`} book={b} onRemove={() => handleRemove(b)} />);
-  }
 
-  const handleFilterChange = (filter) => changeFilter(filter);
+    return bookList.map(b => <Book key={`${b.title}-${b.id}`} book={b} onRemove={() => handleRemove(b)} />);
+  };
+
+  const handleFilterChange = filter => changeFilter(filter);
 
   return (
     <div>
@@ -37,7 +38,6 @@ const BooksList = (props) => {
       </table>
     </div>
   );
-  
 };
 
 BooksList.propTypes = {
@@ -48,10 +48,12 @@ BooksList.propTypes = {
       category: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({ 
+const mapStateToProps = state => ({
   bookList: state.bookReducer.books,
   filter: state.filterReducer.filter,
 });

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CATEGORIES from '../utils/categories';
 
 class CategoryFilter extends React.Component {
@@ -27,12 +28,17 @@ class CategoryFilter extends React.Component {
       <div>
         <p>Filter</p>
         <select value={filter} onChange={this.handleChange}>
-          <option key='All' value='All'>All</option>
+          <option key="All" value="All">All</option>
           {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
       </div>
     );
   }
 }
+
+CategoryFilter.propTypes = {
+  onFilterChange: PropTypes.func.isRequired,
+};
+
 
 export default CategoryFilter;
