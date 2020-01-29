@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import CATEGORIES from '../utils/categories';
 
 class CategoryFilter extends React.Component {
@@ -13,16 +12,21 @@ class CategoryFilter extends React.Component {
   }
 
   handleChange(event) {
+    const { onFilterChange } = this.props;
+
     this.setState({
       filter: event.target.value,
     });
+    onFilterChange(event.target.value);
   }
 
   render() {
+    const { filter } = this.state;
+
     return (
       <div>
         <p>Filter</p>
-        <select value={category} onChange={this.handleChange}>
+        <select value={filter} onChange={this.handleChange}>
           <option key='All' value='All'>All</option>
           {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
@@ -31,8 +35,4 @@ class CategoryFilter extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  changeFilter: filter => dispatch(changeFilter(filter)),
-});
-
-export default connect(null, mapDispatchToProps)(CategoryFilter);
+export default CategoryFilter;

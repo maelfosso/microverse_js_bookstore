@@ -14,7 +14,7 @@ const filterReducter = (state = initialState, action) => {
       break;
 
     default:
-      return store;
+      return state;
   }
 }
 
