@@ -22,20 +22,11 @@ const BooksList = props => {
   const handleFilterChange = filter => changeFilter(filter);
 
   return (
-    <div>
+    <div className="BooksList">
       <CategoryFilter onFilterChange={handleFilterChange} />
-      <p>List of books</p>
-      <table>
-        <thead>
-          <tr>
-            <td>&nbsp;</td>
-            <td>Title</td>
-            <td>Category</td>
-            <td>Remove?</td>
-          </tr>
-        </thead>
-        <tbody>{renderBooks()}</tbody>
-      </table>
+      <div>
+        {renderBooks()}
+      </div>
     </div>
   );
 };

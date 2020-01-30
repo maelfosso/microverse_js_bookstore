@@ -25,9 +25,8 @@ class CategoryFilter extends React.Component {
     const { filter } = this.state;
 
     return (
-      <div>
-        <p>Filter</p>
-        <select value={filter} onChange={this.handleChange}>
+      <div className="CategoryList">
+        <select value={filter} onChange={this.handleChange} className="input content-inside">
           <option key="All" value="All">All</option>
           {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
         </select>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createBook } from '../actions';
 import CATEGORIES from '../utils/categories';
+import '../App.css';
 
 class BooksForm extends React.Component {
   constructor(props) {
@@ -50,15 +51,15 @@ class BooksForm extends React.Component {
     const { title, category } = this.state;
 
     return (
-      <div>
-        <p>Create a book</p>
+      <div className="BooksForm">
+        <div className="title">Add new book</div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="title" placeholder="Title" value={title} onChange={this.handleTitleChange} />
-          <select value={category} onChange={this.handleCategoryChange}>
+          <input type="text" className="input content-inside" name="title" placeholder="Title" value={title} onChange={this.handleTitleChange} />
+          <select className="input content-inside" style={{ height: 'auto' }} value={category} onChange={this.handleCategoryChange}>
             {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
 
-          <button type="submit">Submit</button>
+          <button type="submit">ADd book</button>
         </form>
       </div>
     );
