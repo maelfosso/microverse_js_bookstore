@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../App.css';
 
 const Book = props => {
   const { book, onRemove } = props;
   return (
-    <tr>
-      <td>{book.id}</td>
-      <td>{book.title}</td>
-      <td>{book.category}</td>
-      <td><button type="button" onClick={onRemove}>Remove</button></td>
-    </tr>
+    <div className="Book">
+      <div className="infos">
+        <div className="category">{book.category}</div>
+        <div className="title">{book.title}</div>
+        <div className="id">{book.id}</div>
+      </div>
+
+      <button type="button" onClick={onRemove}>Remove</button>
+    </div>
   );
 };
 

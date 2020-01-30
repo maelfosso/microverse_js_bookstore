@@ -96,14 +96,14 @@ html, body, #root {
   flex-direction: row;
 }
 
-.BooksForm form .input {
+.input {
   height: 45px;
   border-radius: 4px;
   border: 1px solid #e8e8e8;
   background: #ffffff;
 }
 
-.BooksForm form .content-inside {
+.content-inside {
   font-size: 16px;
   letter-spacing: -0.15px;
   color: #c4c4c4;
@@ -130,4 +130,68 @@ html, body, #root {
   background-color: #0290ff;
   color: #ffffff;
   text-transform: uppercase;
+}
+
+.BooksList {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.CategoryList {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.CategoryList select {
+  height: auto;
+  flex-grow: 1;
+}
+
+.Book {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+  padding: 14px 27px;
+}
+
+.Book .infos {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.Book .category {
+  opacity: 0.5;
+  font-size: 14px;
+  font-weight: bold;
+  color: #121212;
+  text-transform: capitalize;
+  padding: 4px 0;
+}
+
+.Book .title {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.Book .id {
+  font-size: 14px;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.Book button {
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+  height: 33px;
+  padding: 7px 22px;
 }
