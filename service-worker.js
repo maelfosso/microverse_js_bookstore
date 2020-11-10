@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/microverse_js_bookstore/precache-manifest.e63aaeadb52c1c73eb70ec02aa408ee6.js"
+  "/microverse_js_bookstore/precache-manifest.7c11bfc9f8f5ff9f21e6d67507867d68.js"
 );
 
 self.addEventListener('message', (event) => {

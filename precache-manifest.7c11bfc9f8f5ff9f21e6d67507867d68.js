@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9b3f2eb815eaf1851c3efbd0838907f8",
+    "revision": "66645f2f589dbb1f1a82eb37980e52b7",
     "url": "/microverse_js_bookstore/index.html"
   },
   {
