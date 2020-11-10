@@ -1,19 +1,60 @@
-## Bookstore
-This project help us to learn how to build a very simple React application. From the beginning to the deployment on HEROKU
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project is part of [microverse](https://www.microverse.org/) curriculum.
+# Bookstore
 
-## Link
-https://mjsbookstore.herokuapp.com/
+> A small library app
+
+![screenshot](./app_screenshot.png)
+
+You can 
+
+A full description of the project can be found [here](https://www.theodinproject.com/courses/javascript/lessons/weather-app)
+
+## Built With
+
+- HTML5
+- CSS3
+- Javascript
+- ReactJs
+
+## Getting Started
+
+### Prerequisites
+
+You need to have these softwares and tools installed
+
+- Node.js
+- Yarn / NPM
+
+### Setup
+
+To get a local copy up and running follow these simple example steps.
+
+- Clone the repository `git clone https://github.com/maelfosso/microverse_js_bookstore`
+- Change your current directory `cd microverse_js_bookstore`
+- Install all the dependencies `yarn install`
+- Run either `yarn start`
+- Your default browser will be automatically opened at `http://localhost:3000`
 
 
-## Set up
+## Authors
 
-To run the project:
+👤 **Mael FOSSO**
 
-- Clone the repository: _https://github.com/maelfosso/microverse_js_bookstore
-- Run `npm install`. It will install all the dependencies required by the project
-- Run `npm start` to start the development server. It will automatically open the page in your default browser.
+- GitHub: [@maelfosso](https://github.com/maelfosso)
+- Twitter: [@maelfosso](https://twitter.com/maelfosso)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mael-fosso-650b6346/)
 
-## Contributors:
-[Mael FOSSO](https://github.com/maelfosso)
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
