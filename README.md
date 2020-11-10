@@ -6,7 +6,7 @@
 
 ![screenshot](./app_screenshot.png)
 
-You can 
+You can add and delete a book.
 
 A full description of the project can be found [here](https://www.theodinproject.com/courses/javascript/lessons/weather-app)
 
