@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/microverse_js_bookstore/static/css/main.f9382655.chunk.css",
+    "main.js": "/microverse_js_bookstore/static/js/main.b5722c1c.chunk.js",
+    "main.js.map": "/microverse_js_bookstore/static/js/main.b5722c1c.chunk.js.map",
+    "runtime-main.js": "/microverse_js_bookstore/static/js/runtime-main.ba377695.js",
+    "runtime-main.js.map": "/microverse_js_bookstore/static/js/runtime-main.ba377695.js.map",
+    "static/js/2.8e3a0073.chunk.js": "/microverse_js_bookstore/static/js/2.8e3a0073.chunk.js",
+    "static/js/2.8e3a0073.chunk.js.map": "/microverse_js_bookstore/static/js/2.8e3a0073.chunk.js.map",
+    "index.html": "/microverse_js_bookstore/index.html",
+    "precache-manifest.e63aaeadb52c1c73eb70ec02aa408ee6.js": "/microverse_js_bookstore/precache-manifest.e63aaeadb52c1c73eb70ec02aa408ee6.js",
+    "service-worker.js": "/microverse_js_bookstore/service-worker.js",
+    "static/css/main.f9382655.chunk.css.map": "/microverse_js_bookstore/static/css/main.f9382655.chunk.css.map",
+    "static/js/2.8e3a0073.chunk.js.LICENSE": "/microverse_js_bookstore/static/js/2.8e3a0073.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ba377695.js",
+    "static/js/2.8e3a0073.chunk.js",
+    "static/css/main.f9382655.chunk.css",
+    "static/js/main.b5722c1c.chunk.js"
+  ]
+}
